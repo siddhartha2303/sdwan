@@ -64,4 +64,13 @@ module "site_vpn10" {
   next_hop1 = var.next_hop_site
 }
 
-
+resource "sdwan_feature_device_template" "device_template_1" {
+  name        = var.device_template_name
+  description = var.device_template_description
+  device_type = "vedge-C8000V"
+  general_templates = [{
+    id      = module.system
+    version = module.system.version
+    type    = sdwan_cisco_system_feature_template.system.template_type
+  }]
+}
