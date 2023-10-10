@@ -22,6 +22,10 @@ module "system" {
   system_ip = var.system_ip
   site_id = var.site_id
 
+module "ntp" {
+  source = "./modules/feature_templates/ntp"
+}
+
 module "vpn0" {
   source = "./modules/feature_templates/vpn0"
 }
