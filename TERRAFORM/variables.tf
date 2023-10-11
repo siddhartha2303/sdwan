@@ -10,7 +10,6 @@ variable interface1_description {
 
 variable interface1_color {
   type        = string
-  default     = "vpn0_internet_interface_color"
 }
 
 variable interface2_name {
@@ -25,7 +24,6 @@ variable interface2_description {
 
 variable interface2_color {
   type        = string
-  default     = "vpn0_mpls_interface_color"
 }
 
 variable service_vpn10_site_template_name {
@@ -117,4 +115,20 @@ variable device_template_name {
 
 variable device_template_description {
   type        = string
+}
+
+variable vpn0_interface1_template_name {
+  type = string
+}
+
+variable vpn0_interface1_template_description {
+  type = string
+}
+
+variable vpn0_interface2_template_name {
+  type = string
+}
+
+variable vpn0_interface2_template_description {
+  type = string
 }
