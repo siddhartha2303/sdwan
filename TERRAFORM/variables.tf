@@ -1,25 +1,31 @@
 variable interface1_name {
   type        = string
+  default     = "vpn0_internet_interface_name"
 }
 
 variable interface1_description {
   type        = string
+  default     = "vpn0_internet_interface_description"
 }
 
 variable interface1_color {
   type        = string
+  default     = "vpn0_internet_interface_color"
 }
 
 variable interface2_name {
   type        = string
+  default     = "vpn0_mpls_interface_name"
 }
 
 variable interface2_description {
   type        = string
+  default     = "vpn0_mpls_interface_description"
 }
 
 variable interface2_color {
   type        = string
+  default     = "vpn0_mpls_interface_color"
 }
 
 variable service_vpn10_site_template_name {
@@ -37,10 +43,12 @@ variable service_vpn10_id {
 
 variable prefix_site {
   type        = string
+  default     = "vpn10_route_prefix"
 }
 
 variable next_hop_site {
   type        = string
+  default     = "vpn10_route_nexthop"
 }
 
 variable vpn512_site_template_name {
@@ -53,6 +61,7 @@ variable vpn512_site_template_description {
 
 variable vpn512_site_interface_ip {
   type        = string
+  default     = "vpn512_interface_ip"
 }
 
 variable system_template_name {
@@ -65,12 +74,47 @@ variable system_template_description {
 
 variable hostname {
     type        = string
+    default     = "system_hostname"
+
 }
 
 variable system_ip {
     type        = string
+    default     = "system_ip"
 }
 
 variable site_id {
-    type        = string
+    type        = number
+    default     = 300
+}
+
+variable service_vpn10_interface_template_name {
+  type        = string
+}
+
+variable service_vpn10_interface_template_description {
+  type        = string
+}
+
+variable service_vpn10_interface_name {
+  type        = string
+  default     = "service_vpn10_interface_name"
+}
+
+variable service_vpn10_interface_description {
+  type        = string
+  default     = "service_vpn10_interface_description"
+}
+
+variable service_vpn10_interface_ip {
+  type        = string
+  default     = "service_vpn10_interface_ip"
+}
+
+variable device_template_name {
+  type        = string
+}
+
+variable device_template_description {
+  type        = string
 }

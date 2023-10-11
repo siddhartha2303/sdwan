@@ -15,8 +15,8 @@ provider "sdwan" {
 }
 
 resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
-  name                  = "feature_c8k_vpn0_interface"
-  description           = "Feature Template for C8000v VPN 0 Interface"
+  name                  = var.template_name
+  description           = var.template_description
   device_types          = ["vedge-C8000V"]
   interface_name        = var.interface_name
   interface_description = var.interface_description
@@ -27,7 +27,7 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
       encapsulation = "ipsec"
     }
   ]
-  tunnel_interface_color                         = "biz-internet"
+  tunnel_interface_color                         = var.color
   tunnel_interface_allow_all                     = false
   tunnel_interface_allow_bgp                     = false
   tunnel_interface_allow_dhcp                    = true

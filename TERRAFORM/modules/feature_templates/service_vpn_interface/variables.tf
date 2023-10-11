@@ -6,14 +6,15 @@ variable template_description {
   type        = string
 }
 
-variable hostname {
+variable interface_name {
   type        = string
 }
 
-variable system_ip {
+variable interface_description {
   type        = string
 }
 
-variable site_id {
-  type        = number
+variable interface_ip {
+  type        = string
 }
+
