@@ -22,6 +22,5 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   interface_description_variable = var.interface_description
   address_variable               = var.interface_ip
   shutdown                                       = false
-  qos_adaptive                                   = true
   nat                                            = false
 }

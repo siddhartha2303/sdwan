@@ -41,6 +41,5 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   tunnel_interface_allow_snmp                    = false
   tunnel_interface_allow_https                   = false
   shutdown                                       = false
-  qos_adaptive                                   = true
   nat                                            = false
 }

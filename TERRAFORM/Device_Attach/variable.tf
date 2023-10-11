@@ -32,15 +32,15 @@ variable "var_vpn0_mpls_interface_color" {
   type    = string
 }
 
-variable "var_prefix_site" {
+variable "var_vpn10_route_prefix" {
   type    = string
 }
 
-variable "var_next_hop_site" {
+variable "var_vpn10_route_nexthop" {
   type    = string
 }
 
-variable "var_vpn512_site_interface_ip" {
+variable "var_vpn512_interface_ip" {
   type    = string
 }
 
