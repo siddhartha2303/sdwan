@@ -8,27 +8,27 @@ variable "device_id" {
     type = string
 }
 
-variable "var_interface1_name" {
+variable "var_vpn0_internet_interface_name" {
   type    = string
 }
 
-variable "var_interface1_description" {
+variable "var_vpn0_internet_interface_description" {
   type    = string
 }
 
-variable "var_interface1_color" {
+variable "var_vpn0_internet_interface_color" {
   type    = string
 }
 
-variable "var_interface2_name" {
+variable "var_vpn0_mpls_interface_name" {
   type    = string
 }
 
-variable "var_interface2_description" {
+variable "var_vpn0_mpls_interface_description" {
   type    = string
 }
 
-variable "var_interface2_color" {
+variable "var_vpn0_mpls_interface_color" {
   type    = string
 }
 
