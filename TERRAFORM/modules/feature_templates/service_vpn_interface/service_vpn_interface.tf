@@ -18,9 +18,9 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   name                  = var.template_name
   description           = var.template_description
   device_types          = ["vedge-C8000V"]
-  interface_name        = var.interface_name
-  interface_description = var.interface_description
-  address               = var.interface_ip
+  interface_name_variable       = var.interface_name
+  interface_description_variable = var.interface_description
+  address_variable               = var.interface_ip
   shutdown                                       = false
   qos_adaptive                                   = true
   nat                                            = false

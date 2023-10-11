@@ -13,7 +13,3 @@ variable hostname {
 variable system_ip {
   type        = string
 }
-
-variable site_id {
-  type        = number
-}

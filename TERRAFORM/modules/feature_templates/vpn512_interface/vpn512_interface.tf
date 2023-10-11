@@ -20,6 +20,6 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   device_types          = ["vedge-C8000V"]
   interface_name        = "GigabitEthernet8"
   interface_description = "***MGMT***"
-  address               = var.interface_ip
+  address_variable               = var.interface_ip
   shutdown              = false
 }

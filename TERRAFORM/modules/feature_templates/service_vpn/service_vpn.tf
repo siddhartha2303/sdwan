@@ -22,10 +22,10 @@ resource "sdwan_cisco_vpn_feature_template" "servicevpn" {
 
   ipv4_static_routes = [
     {
-      prefix   = var.prefix
+      prefix_variable   = var.prefix
       next_hops = [
         {
-          address  = var.next_hop1
+          address_variable  = var.next_hop1
         }
       ]
     }

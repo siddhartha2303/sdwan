@@ -18,8 +18,8 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   name                  = var.template_name
   description           = var.template_description
   device_types          = ["vedge-C8000V"]
-  interface_name        = var.interface_name
-  interface_description = var.interface_description
+  interface_name_variable        = var.interface_name
+  interface_description_variable = var.interface_description
   dhcp          = true
   dhcp_distance = 1
   tunnel_interface_encapsulations = [
@@ -27,7 +27,7 @@ resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
       encapsulation = "ipsec"
     }
   ]
-  tunnel_interface_color                         = var.color
+  tunnel_interface_color_variable                         = var.color
   tunnel_interface_allow_all                     = false
   tunnel_interface_allow_bgp                     = false
   tunnel_interface_allow_dhcp                    = true
