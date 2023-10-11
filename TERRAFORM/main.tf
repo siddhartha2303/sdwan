@@ -81,6 +81,7 @@ resource "sdwan_feature_device_template" "device_template_1" {
   name        = var.device_template_name
   description = var.device_template_description
   device_type = "vedge-C8000V"
+  device_role = "sdwan-edge"
   general_templates = [{
     id   = module.ntp.ntp_id
     type = module.ntp.ntp_templateType
@@ -92,22 +93,24 @@ resource "sdwan_feature_device_template" "device_template_1" {
     {
       id   = module.vpn0.vpn0_id
       type = module.vpn0.vpn0_templateType
+      sub_templates = [{
+        id   = module.vpn0_internet_interface.vpn0interface_id
+        type = module.vpn0_internet_interface.vpn0interface_templateType
+      },
+      {
+        id   = module.vpn0_mpls_interface.vpn0interface_id
+        type = module.vpn0_mpls_interface.vpn0interface_templateType
+      }
+      ]
     },
     {
       id   = module.vpn512.vpn512_id
       type = module.vpn512.vpn512_templateType
-    },
-    {
-      id   = module.vpn512_interface.vpn512interface_id
-      type = module.vpn512_interface.vpn512interface_templateType
-    },
-    {
-      id   = module.vpn0_internet_interface.vpn0interface_id
-      type = module.vpn0_internet_interface.vpn0interface_templateType
-    },
-    {
-      id   = module.vpn0_mpls_interface.vpn0interface_id
-      type = module.vpn0_mpls_interface.vpn0interface_templateType
+      sub_templates = [{
+        id   = module.vpn512_interface.vpn512interface_id
+        type = module.vpn512_interface.vpn512interface_templateType
+      }
+      ]
     },
     {
       id   = module.service_vpn10.servicevpn_id
@@ -117,6 +120,30 @@ resource "sdwan_feature_device_template" "device_template_1" {
         type = module.service_vpn10_interface.servicevpninterface_templateType
         }
       ]
+    },
+    {
+      id   = "acf5e09a-b727-4f4b-8b5c-bc9b5226c41b"
+      type = "cisco_bfd"
+    },
+    {
+      id   = "24636fc4-d4f8-431e-9187-4ecccd97e40e"
+      type = "cedge_aaa" 
+    },
+    {
+      id = "e3122050-db16-420a-9e88-54e33eafccd0"
+      type = "cisco_omp"
+    },
+    {
+      id = "efd82dad-74cc-4c79-ada2-7fbb4d4ec11e"
+      type = "cisco_security"
+    },
+    {
+      id = "1f9e98b9-f5b9-4dcf-b26a-05b711e519fc"
+      type = "cedge_global"
+    },
+    {
+      id = "1c7ce767-6b86-4805-aa42-3f04daf9df5f"
+      type = "cli-template"
     }
   ]
 }
