@@ -41,12 +41,12 @@ variable "service_vpn10_id" {
   type = string
 }
 
-variable "prefix_site" {
+variable "prefix_vpn10" {
   type    = string
   default = "var_vpn10_route_prefix"
 }
 
-variable "next_hop_site" {
+variable "next_hop_vpn10" {
   type    = string
   default = "var_vpn10_route_nexthop"
 }
@@ -152,4 +152,50 @@ variable "ntp_template_name" {
 
 variable "ntp_template_description" {
   type = string
+}
+
+variable "service_vpn11_site_template_name" {
+  type = string
+}
+
+variable "service_vpn11_site_template_description" {
+  type = string
+}
+
+
+variable "service_vpn11_id" {
+  type = string
+}
+
+variable "prefix_vpn11" {
+  type    = string
+  default = "var_vpn11_route_prefix"
+}
+
+variable "next_hop_vpn11" {
+  type    = string
+  default = "var_vpn11_route_nexthop"
+}
+
+variable "service_vpn11_interface_template_name" {
+  type = string
+}
+
+variable "service_vpn11_interface_template_description" {
+  type = string
+}
+
+variable "service_vpn11_interface_name" {
+  type    = string
+  default = "var_service_vpn11_interface_name"
+}
+
+variable "service_vpn11_interface_description" {
+  type    = string
+  default = "var_service_vpn11_interface_description"
+}
+
+variable "service_vpn11_interface_ip" {
+  type    = string
+  default = "var_service_vpn11_interface_ip"
 }

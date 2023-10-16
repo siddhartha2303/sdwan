@@ -71,8 +71,17 @@ module "service_vpn10" {
   vpn_template_name        = var.service_vpn10_site_template_name
   vpn_template_description = var.service_vpn10_site_template_description
   vpn_id                   = var.service_vpn10_id
-  prefix                   = var.prefix_site
-  next_hop1                = var.next_hop_site
+  prefix                   = var.prefix_vpn10
+  next_hop1                = var.next_hop_vpn10
+}
+
+module "service_vpn11" {
+  source                   = "../modules/feature_templates/service_vpn"
+  vpn_template_name        = var.service_vpn11_site_template_name
+  vpn_template_description = var.service_vpn11_site_template_description
+  vpn_id                   = var.service_vpn11_id
+  prefix                   = var.prefix_vpn11
+  next_hop1                = var.next_hop_vpn11
 }
 
 module "service_vpn10_interface" {
@@ -82,6 +91,15 @@ module "service_vpn10_interface" {
   interface_name        = var.service_vpn10_interface_name
   interface_description = var.service_vpn10_interface_description
   interface_ip          = var.service_vpn10_interface_ip
+}
+
+module "service_vpn11_interface" {
+  source                = "../modules/feature_templates/service_vpn_interface"
+  template_name         = var.service_vpn11_interface_template_name
+  template_description  = var.service_vpn11_interface_template_description
+  interface_name        = var.service_vpn11_interface_name
+  interface_description = var.service_vpn11_interface_description
+  interface_ip          = var.service_vpn11_interface_ip
 }
 
 resource "sdwan_feature_device_template" "device_template_1" {

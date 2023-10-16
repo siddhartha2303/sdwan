@@ -28,6 +28,8 @@ resource "sdwan_attach_feature_device_template" "new_cedge" {
       var_vpn0_mpls_interface_color           = var.var_vpn0_mpls_interface_color
       var_vpn10_route_prefix                  = var.var_vpn10_route_prefix
       var_vpn10_route_nexthop                 = var.var_vpn10_route_nexthop
+      var_vpn11_route_prefix                  = var.var_vpn11_route_prefix
+      var_vpn11_route_nexthop                 = var.var_vpn11_route_nexthop
       var_vpn512_interface_ip                 = var.var_vpn512_interface_ip
       var_system_hostname                     = var.var_system_hostname
       var_system_ip                           = var.var_system_ip
@@ -35,6 +37,9 @@ resource "sdwan_attach_feature_device_template" "new_cedge" {
       var_service_vpn10_interface_name        = var.var_service_vpn10_interface_name
       var_service_vpn10_interface_description = var.var_service_vpn10_interface_description
       var_service_vpn10_interface_ip          = var.var_service_vpn10_interface_ip
+      var_service_vpn11_interface_name        = var.var_service_vpn11_interface_name
+      var_service_vpn11_interface_description = var.var_service_vpn11_interface_description
+      var_service_vpn11_interface_ip          = var.var_service_vpn11_interface_ip      
     }
   }]
 }
