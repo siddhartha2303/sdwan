@@ -146,6 +146,15 @@ resource "sdwan_feature_device_template" "device_template_1" {
       ]
     },
     {
+      id   = module.service_vpn11.servicevpn_id
+      type = module.service_vpn11.servicevpn_templateType
+      sub_templates = [{
+        id   = module.service_vpn11_interface.sericevpninterface_id
+        type = module.service_vpn11_interface.servicevpninterface_templateType
+        }
+      ]
+    },    
+    {
       id   = "acf5e09a-b727-4f4b-8b5c-bc9b5226c41b"
       type = "cisco_bfd"
     },
