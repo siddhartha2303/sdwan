@@ -15,8 +15,8 @@ provider "sdwan" {
 }
 
 resource "sdwan_cisco_vpn_feature_template" "vpn512" {
-  name                    = "feature_c8k_vpn512"
-  description             = "Feature Template for C8000V VPN 512"
+  name                    = var.template_name
+  description             = var.template_description
   device_types            = ["vedge-C8000V"]
   vpn_id                  = "512"
 

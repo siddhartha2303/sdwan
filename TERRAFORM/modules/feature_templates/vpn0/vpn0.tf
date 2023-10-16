@@ -15,8 +15,8 @@ provider "sdwan" {
 }
 
 resource "sdwan_cisco_vpn_feature_template" "vpn0" {
-  name                    = "feature-c8k-vpn0"
-  description             = "VPN 0 Feature Template for C8000V"
+  name                    = var.template_name
+  description             = var.template_description
   device_types            = ["vedge-C8000V"]
   vpn_id                  = 0
   omp_admin_distance_ipv4 = 10

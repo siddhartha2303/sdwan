@@ -15,8 +15,8 @@ provider "sdwan" {
 }
 
 resource "sdwan_cisco_ntp_feature_template" "ntp" {
-  name                    = "feature_c8k_ntp"
-  description             = "Feature Template for C8000V NTP"
+  name                    = var.template_name
+  description             = var.template_description
   device_types            = ["vedge-C8000V"]
   servers = [
     {
