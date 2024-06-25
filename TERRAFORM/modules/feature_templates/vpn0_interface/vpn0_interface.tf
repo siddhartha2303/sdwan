@@ -2,26 +2,27 @@ terraform {
   required_providers {
     sdwan = {
       source = "CiscoDevNet/sdwan"
-      version = "0.2.7"
     }
   }
 }
 
 provider "sdwan" {
   username = "admin"
-  password = "pocadmin"
-  url      = "https://vmanage.dcloud.cisco.com:8443"
+  password = "C1sco12345"
+  url      = "https://198.18.1.10:8443"
   insecure = true
 }
 
 resource "sdwan_cisco_vpn_interface_feature_template" "interface" {
   name                  = var.template_name
   description           = var.template_description
+  address               = var.interface_address
   device_types          = ["vedge-C8000V"]
   interface_name_variable        = var.interface_name
   interface_description_variable = var.interface_description
-  dhcp          = true
-  dhcp_distance = 1
+
+  /* dhcp          = true
+  dhcp_distance = 1 */
   tunnel_interface_encapsulations = [
     {
       encapsulation = "ipsec"

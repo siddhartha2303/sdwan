@@ -9,3 +9,7 @@ variable template_description {
 variable interface_ip {
   type        = string
 }
+
+variable interface_name {
+  type        = string
+}

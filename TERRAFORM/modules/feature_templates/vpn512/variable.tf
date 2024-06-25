@@ -5,3 +5,7 @@ variable template_name {
 variable template_description {
   type        = string
 }
+
+variable next_hop512 {
+  type        = string
+}

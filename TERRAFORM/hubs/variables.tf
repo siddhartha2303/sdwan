@@ -13,6 +13,11 @@ variable "interface1_color" {
   default = "var_vpn0_internet_interface_color"
 }
 
+variable "interface1_address" {
+  type    = string
+  default = "var_vpn0_internet_interface_address"
+}
+
 variable "interface2_name" {
   type    = string
   default = "var_vpn0_mpls_interface_name"
@@ -21,6 +26,11 @@ variable "interface2_name" {
 variable "interface2_description" {
   type    = string
   default = "var_vpn0_mpls_interface_description"
+}
+
+variable "interface2_address" {
+  type    = string
+  default = "var_vpn0_mpls_interface_address"
 }
 
 variable "interface2_color" {
@@ -51,6 +61,17 @@ variable "next_hop_vpn10" {
   default = "var_vpn10_route_nexthop"
 }
 
+
+variable "next_hop_vpn0_internet" {
+  type    = string
+  default = "var_vpn0_internet_nexthop"
+}
+
+variable "next_hop_vpn0_mpls" {
+  type    = string
+  default = "var_vpn0_mpls_nexthop"
+}
+
 variable "vpn512_site_template_name" {
   type = string
 }
@@ -62,6 +83,17 @@ variable "vpn512_site_template_description" {
 variable "vpn512_site_interface_ip" {
   type    = string
   default = "var_vpn512_interface_ip"
+}
+
+variable "next_hop_vpn512" {
+  type    = string
+  default = "var_next_hop_vpn512"
+}
+
+
+variable "vpn512_site_interface_name" {
+  type    = string
+  default = "var_vpn512_interface_name"
 }
 
 variable "system_template_name" {

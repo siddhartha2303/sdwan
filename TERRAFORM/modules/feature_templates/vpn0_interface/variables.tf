@@ -14,6 +14,10 @@ variable interface_description {
   type        = string
 }
 
+variable interface_address {
+  type        = string
+}
+
 variable color {
   type        = string
 }

@@ -1,17 +1,34 @@
 terraform {
   required_providers {
     sdwan = {
-      source  = "CiscoDevNet/sdwan"
-      version = "0.2.7"
+      source = "CiscoDevNet/sdwan"
     }
   }
 }
 
 provider "sdwan" {
   username = "admin"
-  password = "pocadmin"
-  url      = "https://vmanage.dcloud.cisco.com:8443"
+  password = "C1sco12345"
+  url      = "https://198.18.1.10:8443"
   insecure = true
+}
+
+
+# Define data sources to fetch template IDs
+data "sdwan_cisco_bfd_feature_template" "bfd" {
+  name = "BFD-dCloud-Feature"
+}
+
+data "sdwan_cedge_aaa_feature_template" "aaa" {
+  name = "Factory_Default_AAA_Template"
+}
+
+data "sdwan_cisco_omp_feature_template" "omp" {
+  name = "OMP-dCloud-Feature"
+}
+
+data "sdwan_cisco_security_feature_template" "security" {
+  name = "Factory_Default_vEdge_Security_Template_V01"
 }
 
 module "system" {
@@ -155,28 +172,20 @@ resource "sdwan_feature_device_template" "device_template_1" {
       ]
     },    
     {
-      id   = "acf5e09a-b727-4f4b-8b5c-bc9b5226c41b"
+      id   = data.sdwan_cisco_bfd_feature_template.bfd.id
       type = "cisco_bfd"
     },
     {
-      id   = "24636fc4-d4f8-431e-9187-4ecccd97e40e"
+      id   = data.sdwan_cedge_aaa_feature_template.aaa.id
       type = "cedge_aaa" 
     },
     {
-      id = "e3122050-db16-420a-9e88-54e33eafccd0"
+      id = data.sdwan_cisco_omp_feature_template.omp.id
       type = "cisco_omp"
     },
     {
-      id = "efd82dad-74cc-4c79-ada2-7fbb4d4ec11e"
+      id = data.sdwan_cisco_security_feature_template.security.id
       type = "cisco_security"
-    },
-    {
-      id = "1f9e98b9-f5b9-4dcf-b26a-05b711e519fc"
-      type = "cedge_global"
-    },
-    {
-      id = "1c7ce767-6b86-4805-aa42-3f04daf9df5f"
-      type = "cli-template"
     }
   ]
 }
