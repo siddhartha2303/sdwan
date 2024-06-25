@@ -31,6 +31,6 @@ var_system_hostname                     = "DC1-VEDGE1"
 var_system_ip                           = "10.1.0.1"
 var_site_id                             = "100"
 
-template_id                             = "f81075d5-445d-4135-8b65-9ae94e725742"
+template_id                             = "207836fd-be3b-4fee-b2cb-776d220d8ddb"
 template_version                        = 0
 device_id                               = "ebdc8bd9-17e5-4eb3-a5e0-f438403a83de"
